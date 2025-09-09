@@ -1,7 +1,11 @@
-POST http://localhost:3001/api/persons
-Content-Type: application/json
+GET https://puhelinluettelo-adlh.onrender.com/api/persons 
+Accept: application/json
 
-{
-    "name": "Kiira Kirppu",
-    "number": "0509878865"
-}
+###
+
+GET https://puhelinluettelo-adlh.onrender.com/info
+Accept: text/html
+
+###
+
+DELETE https://puhelinluettelo-adlh.onrender.com/api/persons/:1
