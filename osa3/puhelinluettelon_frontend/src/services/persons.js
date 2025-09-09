@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = '/api/persons'
+const baseUrl = 'https://puhelinluettelo-adlh.onrender.com/api/persons'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
