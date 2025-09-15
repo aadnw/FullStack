@@ -36,8 +36,7 @@ morgan(function (tokens, req, res) {
 })
 
 const password = process.argv[2]
-const url = `mongodb+srv://nwaada:${password}@cluster0.mhz6arr.mongodb.net/puhelinluetteloApp?retryWrites=true&w=majority&appName=Cluster0`
-
+const url = process.env.MONGODB_URI
 
 app.get('/api/persons', (request, response, next) => {
   Person.find({}).then(persons => {
