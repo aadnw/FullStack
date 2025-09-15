@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import personService from './services/persons'
+import './index.css'
 
 const Filter = ({ newKeyword, handleKeywordChange }) => {
   return (
@@ -65,7 +66,7 @@ const App = () => {
       })
   }, [])
 
-  const addName = (event) => {
+  const addName = event => {
     event.preventDefault()
 
     const existingPerson = persons.find(person => person.name === newName)
@@ -91,7 +92,8 @@ const App = () => {
               setNewNumber('')
         })
         .catch(error => {
-          setNewMessage(`Information of ${newName} has already been removed from server`)
+          const message = error.response?.data?.error || `Information of ${newName} has already been removed from server`
+          setNewMessage(message)
           setMessageType('error')
           setTimeout(() => setNewMessage(null), 5000)
           setPersons(persons.filter(person => person.id !== existingPerson.id))
@@ -114,6 +116,12 @@ const App = () => {
           setNewName('')
           setNewNumber('')
         })
+        .catch(error => {
+          const message = error.response?.data?.error || 'An error occured'
+          setNewMessage(message)
+          setMessageType('error')
+          setTimeout(() => setNewMessage(null), 5000)
+      })
     }
   }
   
