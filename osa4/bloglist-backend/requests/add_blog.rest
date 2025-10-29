@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hamFra2EiLCJpZCI6IjY4Y2JmMjdlYWRhMDA3OTgzY2RmOTJmYiIsImlhdCI6MTc1ODI2MjIxOX0.7Tb1yMGpgzmtzCN2csTF667q9Ns4jS99D1o1BEeYtbg
+
+{
+  "title": "Söpöt kissat",
+  "author": "kissahullu000",
+  "url": "www.kissavideot.com",
+  "likes": 18
+}
